@@ -1,3 +1,2 @@
-# Getting Started with Create React App
+# budget control application
 
-budget control application
