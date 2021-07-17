@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import PropTypes from "prop-types";
 
 export const Error = memo(({ message }) => {
   return (
@@ -7,3 +8,7 @@ export const Error = memo(({ message }) => {
     </>
   );
 });
+
+Error.propTypes = {
+  message: PropTypes.string.isRequired,
+};

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Error } from "./Error";
 
-export const Ask = ({ setBudget, setRestante }) => {
-  console.log("Me estoy renderizando");
-
+export const Ask = ({ setBudget, setRestante, setShowask }) => {
   const [amount, setAmount] = useState(0);
   const [error, setError] = useState(false);
   const [messageError, setMessageError] = useState("");
@@ -25,6 +24,7 @@ export const Ask = ({ setBudget, setRestante }) => {
     setError(false);
     setBudget(amount);
     setRestante(amount);
+    setShowask(false);
   };
 
   return (
@@ -49,4 +49,10 @@ export const Ask = ({ setBudget, setRestante }) => {
       </form>
     </>
   );
+};
+
+Ask.propTypes = {
+  setBudget: PropTypes.func.isRequired,
+  setRestante: PropTypes.func.isRequired,
+  setShowask: PropTypes.func.isRequired,
 };
